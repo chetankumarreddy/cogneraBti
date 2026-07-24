@@ -1,0 +1,11 @@
+[
+  {
+    "policy_id": "FCA_OPERATIONAL_OVERSIGHT"
+  },
+  {
+    "policy_id": "AML_BEHAVIOURAL_MONITORING"
+  },
+  {
+    "policy_id": "KYC_CONTROLS"
+  }
+]

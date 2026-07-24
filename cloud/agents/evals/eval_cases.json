@@ -1,0 +1,12 @@
+[
+  {
+    "txn_id": "TXN-000421",
+    "persona": "fca_examiner",
+    "must_contain": ["Confidence", "Recommendation", "Human review"]
+  },
+  {
+    "txn_id": "TXN-000423",
+    "persona": "compliance_officer",
+    "must_contain": ["KYC", "Recommendation"]
+  }
+]

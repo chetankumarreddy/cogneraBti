@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cognira-bti-web
+  namespace: cognira-bti
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: cognira-bti-web }
+  template:
+    metadata:
+      labels: { app: cognira-bti-web }
+    spec:
+      containers:
+        - name: web
+          image: FRONTEND_IMAGE_PLACEHOLDER
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests: { cpu: "100m", memory: "128Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }

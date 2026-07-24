@@ -1,0 +1,9 @@
+rag_runtime:
+  default_mode: local_hash_index
+  supported_modes: [local_hash_index, vertex_vector_search_future, bigquery_vector_future]
+  local_hash_index:
+    index_file: model_vault/rag_index.json
+    corpus_sources: [entity_registry.json, wallet_registry.json, oracle_registry.json, policy_registry.json]
+  retrieval:
+    top_k: 5
+    evidence_grounding_required: true

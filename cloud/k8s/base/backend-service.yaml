@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cognira-bti-api
+  namespace: cognira-bti
+spec:
+  type: ClusterIP
+  selector: { app: cognira-bti-api }
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000

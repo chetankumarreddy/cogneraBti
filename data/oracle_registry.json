@@ -1,0 +1,10 @@
+[
+  {
+    "oracle_address": "0xORACLELOGISTICS001",
+    "status": "approved"
+  },
+  {
+    "oracle_address": "0xORACLEUNKNOWN999",
+    "status": "unknown"
+  }
+]

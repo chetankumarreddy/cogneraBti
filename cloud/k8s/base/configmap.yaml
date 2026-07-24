@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cognira-bti-config
+  namespace: cognira-bti
+data:
+  BTI_PLATFORM_NAME: "Cognira BTI"
+  BTI_STORAGE_MODE: "local"
+  BTI_LLM_MODE: "mock"
+  BTI_LEDGER_MODE: "gcul_with_mock_fallback"
+  BTI_AUTH_MODE: "mock"
+  BTI_GRAPH_MODE: "networkx"
+  BTI_DATA_DIR: "/app/data"
+  BTI_CONTROL_DIR: "/app/control_room"
+  BTI_GCP_PROJECT_ID: "PROJECT_ID_PLACEHOLDER"
+  BTI_GCP_REGION: "REGION_PLACEHOLDER"
+  BTI_GCP_ZONE: "ZONE_PLACEHOLDER"
+  BTI_GCUL_ENDPOINT: "GCUL_ENDPOINT_PLACEHOLDER"
+  BTI_GCUL_CHAIN_ID: "gcul-hackathon"
+  BTI_ETHEREUM_RPC_URL: "ETHEREUM_RPC_URL_PLACEHOLDER"
+
+  BTI_ML_MODE: "local"
+  BTI_BIGQUERY_DATASET: "cognira_bti"
+  BTI_BQML_MODEL: "txn_anomaly_kmeans"
+  BTI_GEMINI_MODEL: "gemini-2.5-pro"
+  BTI_LOCAL_LLM_MODE: "template"
+  BTI_OLLAMA_ENDPOINT: "http://ollama:11434"
+  BTI_OLLAMA_MODEL: "llama3.1"
+  BTI_RAG_MODE: "local_hash_index"

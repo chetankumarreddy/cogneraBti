@@ -1,0 +1,16 @@
+llm_runtime:
+  default_mode: mock
+  supported_modes: [gemini, gemini_with_local_fallback, ollama, transformers, template, mock]
+  gemini:
+    provider: Gemini Enterprise Agent Platform
+    model: gemini-2.5-pro
+    location_env: BTI_GCP_REGION
+    project_env: BTI_GCP_PROJECT_ID
+    secret_source: Secret Manager or Workload Identity
+  local_llm:
+    ollama_endpoint_env: BTI_OLLAMA_ENDPOINT
+    ollama_model_env: BTI_OLLAMA_MODEL
+    fallback: deterministic_template
+  story_guardian:
+    require_evidence_refs: true
+    require_human_review_below_confidence: 0.60

@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports: ['8000:8000']
+    environment:
+      - BTI_STORAGE_MODE=local
+      - BTI_LLM_MODE=mock
+      - BTI_LEDGER_MODE=mock_gcul
+      - BTI_AUTH_MODE=mock
+      - BTI_GRAPH_MODE=networkx
+    volumes:
+      - ./data:/data
+      - ./control_room:/control_room
+      - ./evidence:/evidence
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    ports: ['5173:5173']
+    volumes: ['./frontend:/app']

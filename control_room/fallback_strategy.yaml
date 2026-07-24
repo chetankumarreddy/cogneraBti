@@ -1,0 +1,38 @@
+fallback_strategy:
+  principle: The hackathon demo must continue to run even when external enterprise services are unavailable.
+  ledger:
+    primary: gcul
+    fallback: mock_gcul
+  llm:
+    primary: gemini
+    fallback_chain: [ollama, transformers, template, mock]
+  graph:
+    primary: neo4j
+    fallback: networkx
+  auth:
+    primary: firebase
+    fallback: mock
+  storage:
+    primary: firestore
+    analytics: bigquery
+    fallback: local_json
+  export:
+    primary: reportlab_pdf
+    fallback: csv
+  enrichment:
+    kyc: local_registry
+    pam: local_mock
+    ad: local_mock
+    siem: local_log
+
+runtime_switches:
+  admin_console_editable:
+    - ledger.default_mode
+    - llm.default_mode
+    - graph.default_mode
+    - auth.default_mode
+    - persistence.default_mode
+    - rules.enabled
+    - rules.threshold
+    - anomaly_scenarios.enabled
+  standard_user_read_only: true

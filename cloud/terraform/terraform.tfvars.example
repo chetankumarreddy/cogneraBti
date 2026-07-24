@@ -1,0 +1,11 @@
+project_id = "your-gcp-project-id"
+region = "europe-west2"
+zone = "europe-west2-a"
+cluster_name = "cognira-bti-gke"
+artifact_repo = "cognira-bti"
+gcul_endpoint = "https://gcul.example.internal/rpc"
+gcul_chain_id = "gcul-hackathon"
+# Do not commit real passwords. Use environment variables:
+# export TF_VAR_gcul_secret_password='...'
+# export TF_VAR_ethereum_rpc_password='...'
+# export TF_VAR_app_admin_password='...'

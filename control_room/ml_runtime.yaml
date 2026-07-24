@@ -1,0 +1,12 @@
+ml_runtime:
+  default_mode: local
+  supported_modes: [local, bigquery_ml, bigquery_ml_with_local_fallback]
+  local:
+    model: local_isolation_fallback
+    feature_module: backend/bti/ml/signal_forge.py
+  bigquery_ml:
+    dataset_env: BTI_BIGQUERY_DATASET
+    model_env: BTI_BQML_MODEL
+    create_model_sql: cloud/bigquery/create_bqml_anomaly_model.sql
+    detect_anomalies_sql: cloud/bigquery/detect_bqml_anomalies.sql
+  fallback_order: [bigquery_ml, local]

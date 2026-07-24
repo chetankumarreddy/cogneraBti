@@ -1,0 +1,21 @@
+{
+  "name": "Cognira BTI Gemini Narrative Agent",
+  "provider": "Gemini Enterprise Agent Platform",
+  "purpose": "Generate evidence-grounded role-specific blockchain transaction narratives for compliance, audit, financial crime and FCA-style review.",
+  "guardrails": [
+    "Use supplied evidence only",
+    "Never assume unknown entities",
+    "Do not infer customer intent",
+    "Use UK regulatory tone",
+    "State 'I don’t know. Human review required.' when confidence is insufficient",
+    "Preserve evidence lineage"
+  ],
+  "input_contract": {
+    "transaction": "decoded transaction object",
+    "rules": "triggered rule list",
+    "risk": "risk score, risk level, confidence",
+    "rag_context": "retrieved entity, policy, wallet and oracle context",
+    "persona": "compliance_officer | relationship_manager | external_auditor | fca_examiner"
+  },
+  "required_sections": ["What happened", "Why it matters", "How it happened", "Confidence", "Impact", "Recommendation"]
+}

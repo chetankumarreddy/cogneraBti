@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "golden-off-hours-burn-fca",
+    "txn_id": "TXN-000421",
+    "persona": "fca_examiner",
+    "must_contain": ["Confidence", "Recommendation", "Human review"]
+  },
+  {
+    "case_id": "golden-near-threshold-kyc",
+    "txn_id": "TXN-000423",
+    "persona": "compliance_officer",
+    "must_contain": ["KYC", "Recommendation", "Confidence"]
+  },
+  {
+    "case_id": "golden-unknown-oracle",
+    "txn_id": "TXN-000422",
+    "persona": "external_auditor",
+    "must_contain": ["Confidence", "evidence", "Recommendation"]
+  }
+]

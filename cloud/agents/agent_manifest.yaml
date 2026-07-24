@@ -1,0 +1,15 @@
+name: cognira-bti-investigation-agent
+display_name: Cognira BTI Investigation Agent
+runtime: local_or_gemini_agent_platform
+primary_deployment: gke
+optional_deployment: agent_runtime
+tools:
+  - analyse_transaction
+  - generate_narrative
+  - retrieve_context
+  - explain_model
+guardrails:
+  - Never assume unknown entities
+  - Use supplied evidence only
+  - Human review required below confidence threshold
+  - Preserve evidence lineage

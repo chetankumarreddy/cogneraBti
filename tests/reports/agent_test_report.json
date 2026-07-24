@@ -1,0 +1,97 @@
+{
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "results": [
+    {
+      "case_id": "golden-off-hours-burn-fca",
+      "txn_id": "TXN-000421",
+      "persona": "fca_examiner",
+      "passed": true,
+      "checks": {
+        "required_terms": {
+          "passed": true,
+          "checks": {
+            "Confidence": true,
+            "Recommendation": true,
+            "Human review": true
+          }
+        },
+        "no_speculation": {
+          "passed": true,
+          "findings": []
+        },
+        "human_review_low_confidence": {
+          "passed": true,
+          "reason": "confidence above threshold"
+        },
+        "evidence_reference": {
+          "passed": true,
+          "txn_id": "TXN-000421"
+        }
+      },
+      "narrative_provider": "local_template",
+      "narrative_preview": "What happened: Albion Energy executed burn on Digital Passbook for 22000000 GBP_TOKEN.\nWhy it matters: Risk is High with rules triggered: OFF_HOURS, LARGE_BALANCE_MOVEMENT.\nHow it happened: Source wallet 0xALBION001 interacted with destination wallet 0xBURN000 on GCUL.\nConfidence: 0.88.\nImpact: Potential compliance, audit, financial crime and FCA evidence relevance.\nRecommendation: Validate client instruction, KYC state, oracle provenance and retain evidence lineage. Human review required."
+    },
+    {
+      "case_id": "golden-near-threshold-kyc",
+      "txn_id": "TXN-000423",
+      "persona": "compliance_officer",
+      "passed": true,
+      "checks": {
+        "required_terms": {
+          "passed": true,
+          "checks": {
+            "KYC": true,
+            "Recommendation": true,
+            "Confidence": true
+          }
+        },
+        "no_speculation": {
+          "passed": true,
+          "findings": []
+        },
+        "human_review_low_confidence": {
+          "passed": true,
+          "reason": "confidence above threshold"
+        },
+        "evidence_reference": {
+          "passed": true,
+          "txn_id": "TXN-000423"
+        }
+      },
+      "narrative_provider": "local_template",
+      "narrative_preview": "What happened: Newbridge Imports executed mint on Digital Passbook for 49800000 GBP_TOKEN.\nWhy it matters: Risk is High with rules triggered: OFF_HOURS, HIGH_VALUE, KYC_MISSING, FIRST_TIME_RECEIVER.\nHow it happened: Source wallet 0xNEWBRIDGE001 interacted with destination wallet 0xMERIDIAN001 on GCUL.\nConfidence: 0.88.\nImpact: Potential compliance, audit, financial crime and FCA evidence relevance.\nRecommendation: Validate client instruction, KYC state, oracle provenance and retain evidence lineage. Human review required."
+    },
+    {
+      "case_id": "golden-unknown-oracle",
+      "txn_id": "TXN-000422",
+      "persona": "external_auditor",
+      "passed": true,
+      "checks": {
+        "required_terms": {
+          "passed": true,
+          "checks": {
+            "Confidence": true,
+            "evidence": true,
+            "Recommendation": true
+          }
+        },
+        "no_speculation": {
+          "passed": true,
+          "findings": []
+        },
+        "human_review_low_confidence": {
+          "passed": true,
+          "reason": "mandatory human review phrase for low confidence"
+        },
+        "evidence_reference": {
+          "passed": true,
+          "txn_id": "TXN-000422"
+        }
+      },
+      "narrative_provider": "local_template",
+      "narrative_preview": "What happened: Northfield Logistics executed fundEscrow on Digital Passbook for 500000 GBP_TOKEN.\nWhy it matters: Risk is Medium with rules triggered: UNKNOWN_WALLET, OFF_HOURS, FIRST_TIME_RECEIVER, UNKNOWN_WALLET.\nHow it happened: Source wallet 0xNORTHFIELD001 interacted with destination wallet 0xUNKNOWN001 on GCUL.\nConfidence: 0.55. I don\u2019t know. Human review required.\nImpact: Potential compliance, audit, financial crime and FCA evidence relevance.\nRecommendation: Validate client instruction, KYC state, oracle provenance and retain evidence lineage. Human review required."
+    }
+  ]
+}

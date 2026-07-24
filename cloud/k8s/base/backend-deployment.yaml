@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cognira-bti-api
+  namespace: cognira-bti
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: cognira-bti-api }
+  template:
+    metadata:
+      labels: { app: cognira-bti-api }
+    spec:
+      serviceAccountName: cognira-bti-ksa
+      containers:
+        - name: api
+          image: BACKEND_IMAGE_PLACEHOLDER
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef: { name: cognira-bti-config }
+          env:
+            - name: BTI_SECRET_MOUNT_PATH
+              value: /var/secrets/cognira-bti
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /var/secrets/cognira-bti
+              readOnly: true
+          readinessProbe:
+            httpGet: { path: /health, port: 8000 }
+            initialDelaySeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: 8000 }
+            initialDelaySeconds: 30
+          resources:
+            requests: { cpu: "250m", memory: "512Mi" }
+            limits: { cpu: "1", memory: "1Gi" }
+      volumes:
+        - name: secret-volume
+          csi:
+            driver: secrets-store-gke.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: cognira-bti-secret-provider

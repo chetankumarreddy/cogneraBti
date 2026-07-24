@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-07-23T05:43:34.344461Z",
+  "transaction": {
+    "txn_id": "TXN-000423",
+    "txn_hash": "0xc92e031ebde61d370e9c5dd44c2de19f31f1334e16f79414a794042e2b524300",
+    "block_hash": "0x9fa6eb003f14425eb9c8e6baacfbcaab",
+    "chain": "GCUL",
+    "contract_name": "Digital Passbook",
+    "contract_address": "0xDPB001",
+    "function": "mint",
+    "event_type": "deposit",
+    "from_wallet": "0xNEWBRIDGE001",
+    "to_wallet": "0xMERIDIAN001",
+    "entity_id": "ENT-005",
+    "entity": "Newbridge Imports",
+    "amount": 49800000,
+    "currency": "GBP_TOKEN",
+    "timestamp": "2026-07-11T03:37:00Z",
+    "business_day": false,
+    "balance_percentage_moved": 10,
+    "status": "success",
+    "po_reference": null,
+    "oracle_address": null,
+    "kyc_status": "missing",
+    "signature_valid": true,
+    "hash_valid": true,
+    "first_time_receiver": true,
+    "velocity_24h": 3
+  },
+  "integrity": {
+    "hash_valid": true,
+    "signature_valid": true,
+    "cryptographic_assurance": "passed"
+  },
+  "decoded": {
+    "business_action": "mint",
+    "contract": "Digital Passbook"
+  },
+  "rules": [
+    {
+      "rule_id": "OFF_HOURS",
+      "description": "Transaction executed during off-hours",
+      "severity": "medium",
+      "weight": 12,
+      "evidence": "Transaction executed outside expected hours"
+    },
+    {
+      "rule_id": "HIGH_VALUE",
+      "description": "Transaction exceeds threshold",
+      "severity": "high",
+      "weight": 20,
+      "evidence": "High or near-threshold value"
+    },
+    {
+      "rule_id": "KYC_MISSING",
+      "description": "KYC information missing",
+      "severity": "high",
+      "weight": 20,
+      "evidence": "KYC is missing"
+    },
+    {
+      "rule_id": "FIRST_TIME_RECEIVER",
+      "description": "First interaction with receiver",
+      "severity": "low",
+      "weight": 8,
+      "evidence": "First interaction with receiver"
+    }
+  ],
+  "risk": {
+    "risk_score": 74,
+    "risk_level": "High",
+    "confidence": 0.88,
+    "human_review_required": true,
+    "risk_contributors": [
+      "OFF_HOURS",
+      "HIGH_VALUE",
+      "KYC_MISSING",
+      "FIRST_TIME_RECEIVER"
+    ]
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "0xMERIDIAN001",
+        "label": "0xMERIDIAN001"
+      },
+      {
+        "id": "0xNEWBRIDGE001",
+        "label": "0xNEWBRIDGE001"
+      }
+    ],
+    "edges": [
+      {
+        "from": "0xNEWBRIDGE001",
+        "to": "0xMERIDIAN001",
+        "amount": 49800000
+      }
+    ],
+    "signals": [
+      "NetworkX unavailable, used lightweight graph fallback"
+    ]
+  },
+  "ml": {
+    "model_mode": "local_demo",
+    "anomaly_score": 0.74
+  },
+  "narrative": {
+    "sections": {
+      "what_happened": "Newbridge Imports executed mint on Digital Passbook for 49800000 GBP_TOKEN at 2026-07-11T03:37:00Z.",
+      "why_it_matters": "The transaction is technically valid but contextually classified as High. Rules triggered: OFF_HOURS, HIGH_VALUE, KYC_MISSING, FIRST_TIME_RECEIVER.",
+      "how_it_happened": "Wallet 0xNEWBRIDGE001 interacted with 0xMERIDIAN001 on GCUL.",
+      "confidence": "Confidence is 0.88.",
+      "impact": "Potential compliance, audit, financial crime, and FCA evidence relevance.",
+      "recommendation": "Validate client instruction, KYC, oracle provenance, and supporting evidence. Human review required."
+    },
+    "text": "what_happened: Newbridge Imports executed mint on Digital Passbook for 49800000 GBP_TOKEN at 2026-07-11T03:37:00Z.\nwhy_it_matters: The transaction is technically valid but contextually classified as High. Rules triggered: OFF_HOURS, HIGH_VALUE, KYC_MISSING, FIRST_TIME_RECEIVER.\nhow_it_happened: Wallet 0xNEWBRIDGE001 interacted with 0xMERIDIAN001 on GCUL.\nconfidence: Confidence is 0.88.\nimpact: Potential compliance, audit, financial crime, and FCA evidence relevance.\nrecommendation: Validate client instruction, KYC, oracle provenance, and supporting evidence. Human review required.",
+    "persona": "compliance_officer"
+  }
+}

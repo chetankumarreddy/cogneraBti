@@ -1,0 +1,58 @@
+[
+  {
+    "wallet_address": "0xMERIDIAN001",
+    "entity_id": "ENT-001",
+    "known": true,
+    "status": "active",
+    "risk_tags": [],
+    "country": "GB"
+  },
+  {
+    "wallet_address": "0xALBION001",
+    "entity_id": "ENT-002",
+    "known": true,
+    "status": "active",
+    "risk_tags": [],
+    "country": "GB"
+  },
+  {
+    "wallet_address": "0xCALEDONIAN001",
+    "entity_id": "ENT-003",
+    "known": true,
+    "status": "active",
+    "risk_tags": [],
+    "country": "GB"
+  },
+  {
+    "wallet_address": "0xNORTHFIELD001",
+    "entity_id": "ENT-004",
+    "known": true,
+    "status": "active",
+    "risk_tags": [],
+    "country": "GB"
+  },
+  {
+    "wallet_address": "0xNEWBRIDGE001",
+    "entity_id": "ENT-005",
+    "known": true,
+    "status": "active",
+    "risk_tags": [],
+    "country": "GB"
+  },
+  {
+    "wallet_address": "0xUNKNOWN001",
+    "entity_id": null,
+    "known": false,
+    "status": "unknown",
+    "risk_tags": [],
+    "country": "Unknown"
+  },
+  {
+    "wallet_address": "0xBURN000",
+    "entity_id": null,
+    "known": true,
+    "status": "burn",
+    "risk_tags": [],
+    "country": "GB"
+  }
+]

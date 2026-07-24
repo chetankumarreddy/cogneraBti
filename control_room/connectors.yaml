@@ -1,0 +1,88 @@
+platform:
+  name: Cognira BTI
+  mode: configurable
+
+ledger:
+  default_mode: mock_gcul
+  fallback_order: [gcul, mock_gcul, ethereum_mock, eosio_mock, fabric_simulation]
+  modes:
+    mock_gcul:
+      enabled: true
+      description: Synthetic GCUL-compatible ledger for hackathon and offline demos.
+    gcul:
+      enabled: false
+      description: Real GCUL integration placeholder. Requires endpoint, service account and KMS-backed secrets.
+    ethereum:
+      enabled: false
+      description: Ethereum adapter using transaction hash, receipt, ABI and event logs.
+    eosio:
+      enabled: false
+      description: EOSIO adapter using account/action traces.
+    fabric_simulation:
+      enabled: true
+      description: Hyperledger Fabric-style chaincode event simulation.
+
+auth:
+  default_mode: mock
+  fallback_order: [firebase, mock]
+  modes:
+    mock:
+      enabled: true
+      users: [admin@cognira.local, analyst@cognira.local, auditor@cognira.local]
+    firebase:
+      enabled: false
+      description: Enterprise Firebase Authentication or SSO bridge.
+
+llm:
+  default_mode: mock
+  fallback_order: [gemini, ollama, transformers, template, mock]
+  modes:
+    gemini:
+      enabled: false
+      description: Gemini Enterprise Agent Platform integration.
+    ollama:
+      enabled: false
+      endpoint: http://localhost:11434
+      model: llama3.1
+    transformers:
+      enabled: false
+      model: local-transformer-placeholder
+    template:
+      enabled: true
+      description: Deterministic template-first narrative.
+    mock:
+      enabled: true
+      description: Offline narrative mode for hackathon reliability.
+
+graph:
+  default_mode: networkx
+  fallback_order: [neo4j, networkx]
+  modes:
+    networkx:
+      enabled: true
+      description: Local graph analysis.
+    neo4j:
+      enabled: false
+      description: Enterprise graph database integration.
+
+persistence:
+  default_mode: local
+  fallback_order: [firestore, bigquery, local]
+  modes:
+    local:
+      enabled: true
+      path: ./evidence
+    firestore:
+      enabled: false
+      description: Operational case and evidence store.
+    bigquery:
+      enabled: false
+      description: Analytics and model monitoring store.
+
+integrations:
+  kyc: {enabled: true, mode: mock, fallback: local_registry}
+  two_fa: {enabled: true, mode: mock, fallback: assumed_unverified}
+  pam: {enabled: true, mode: mock, fallback: local_admin_events}
+  active_directory: {enabled: true, mode: mock, fallback: local_identity_registry}
+  siem: {enabled: false, mode: syslog, fallback: local_log}
+  syslog: {enabled: false, endpoint: null}

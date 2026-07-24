@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@mui/material": "latest",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "recharts": "latest",
+    "vis-network": "latest",
+    "framer-motion": "latest"
+  },
+  "devDependencies": {},
+  "name": "cognira-bti-hackathon",
+  "private": true
+}

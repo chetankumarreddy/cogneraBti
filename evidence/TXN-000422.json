@@ -1,0 +1,334 @@
+{
+  "generated_at": "2026-07-23T05:43:34.349598Z",
+  "transaction": {
+    "txn_id": "TXN-000422",
+    "txn_hash": "0x8d4b8589f6884a04294bf210bea420e07009549a5186f40b18af69d2d94e21b3",
+    "block_hash": "0x9fa6eb003f14425eb9c8e6baacfbcaab",
+    "chain": "GCUL",
+    "contract_name": "Digital Passbook",
+    "contract_address": "0xDPB001",
+    "function": "fundEscrow",
+    "event_type": "escrow_funded",
+    "from_wallet": "0xNORTHFIELD001",
+    "to_wallet": "0xUNKNOWN001",
+    "entity_id": "ENT-004",
+    "entity": "Northfield Logistics",
+    "amount": 500000,
+    "currency": "GBP_TOKEN",
+    "timestamp": "2026-07-01T03:09:00Z",
+    "business_day": true,
+    "balance_percentage_moved": 35,
+    "status": "success",
+    "po_reference": null,
+    "oracle_address": "0xORACLEUNKNOWN999",
+    "kyc_status": "valid",
+    "signature_valid": true,
+    "hash_valid": true,
+    "first_time_receiver": true,
+    "velocity_24h": 1
+  },
+  "integrity": {
+    "hash_valid": true,
+    "signature_valid": true,
+    "cryptographic_assurance": "passed"
+  },
+  "decoded": {
+    "business_action": "fundEscrow",
+    "contract": "Digital Passbook"
+  },
+  "rules": [
+    {
+      "rule_id": "UNKNOWN_WALLET",
+      "description": "Destination wallet could not be verified",
+      "severity": "high",
+      "weight": 18,
+      "evidence": "Destination wallet could not be verified"
+    },
+    {
+      "rule_id": "OFF_HOURS",
+      "description": "Transaction executed during off-hours",
+      "severity": "medium",
+      "weight": 12,
+      "evidence": "Transaction executed outside expected hours"
+    },
+    {
+      "rule_id": "FIRST_TIME_RECEIVER",
+      "description": "First interaction with receiver",
+      "severity": "low",
+      "weight": 8,
+      "evidence": "First interaction with receiver"
+    },
+    {
+      "rule_id": "UNKNOWN_WALLET",
+      "description": "Destination wallet could not be verified",
+      "severity": "high",
+      "weight": 18,
+      "evidence": "Oracle is not approved"
+    }
+  ],
+  "risk": {
+    "risk_score": 56,
+    "risk_level": "Medium",
+    "confidence": 0.55,
+    "human_review_required": true,
+    "risk_contributors": [
+      "UNKNOWN_WALLET",
+      "OFF_HOURS",
+      "FIRST_TIME_RECEIVER",
+      "UNKNOWN_WALLET"
+    ]
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "0xALBION001",
+        "label": "0xALBION001"
+      },
+      {
+        "id": "0xBURN000",
+        "label": "0xBURN000"
+      },
+      {
+        "id": "0xCALEDONIAN001",
+        "label": "0xCALEDONIAN001"
+      },
+      {
+        "id": "0xMERIDIAN001",
+        "label": "0xMERIDIAN001"
+      },
+      {
+        "id": "0xNEWBRIDGE001",
+        "label": "0xNEWBRIDGE001"
+      },
+      {
+        "id": "0xNORTHFIELD001",
+        "label": "0xNORTHFIELD001"
+      },
+      {
+        "id": "0xUNKNOWN001",
+        "label": "0xUNKNOWN001"
+      }
+    ],
+    "edges": [
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xMERIDIAN001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNORTHFIELD001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xMERIDIAN001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 8000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNORTHFIELD001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 500000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 500000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 1000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNORTHFIELD001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 1000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 250000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xCALEDONIAN001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNORTHFIELD001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 1000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNEWBRIDGE001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xALBION001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xBURN000",
+        "amount": 500000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xNORTHFIELD001",
+        "amount": 12000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 6000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xMERIDIAN001",
+        "amount": 8000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 3000000
+      },
+      {
+        "from": "0xNORTHFIELD001",
+        "to": "0xUNKNOWN001",
+        "amount": 250000
+      }
+    ],
+    "signals": [
+      "NetworkX unavailable, used lightweight graph fallback"
+    ]
+  },
+  "ml": {
+    "model_mode": "local_demo",
+    "anomaly_score": 0.56
+  },
+  "narrative": {
+    "sections": {
+      "what_happened": "Northfield Logistics executed fundEscrow on Digital Passbook for 500000 GBP_TOKEN at 2026-07-01T03:09:00Z.",
+      "why_it_matters": "The transaction is technically valid but contextually classified as Medium. Rules triggered: UNKNOWN_WALLET, OFF_HOURS, FIRST_TIME_RECEIVER, UNKNOWN_WALLET.",
+      "how_it_happened": "Wallet 0xNORTHFIELD001 interacted with 0xUNKNOWN001 on GCUL.",
+      "confidence": "Confidence is 0.55. I don\u2019t know. Human review required.",
+      "impact": "Potential compliance, audit, financial crime, and FCA evidence relevance.",
+      "recommendation": "Validate client instruction, KYC, oracle provenance, and supporting evidence. Human review required."
+    },
+    "text": "what_happened: Northfield Logistics executed fundEscrow on Digital Passbook for 500000 GBP_TOKEN at 2026-07-01T03:09:00Z.\nwhy_it_matters: The transaction is technically valid but contextually classified as Medium. Rules triggered: UNKNOWN_WALLET, OFF_HOURS, FIRST_TIME_RECEIVER, UNKNOWN_WALLET.\nhow_it_happened: Wallet 0xNORTHFIELD001 interacted with 0xUNKNOWN001 on GCUL.\nconfidence: Confidence is 0.55. I don\u2019t know. Human review required.\nimpact: Potential compliance, audit, financial crime, and FCA evidence relevance.\nrecommendation: Validate client instruction, KYC, oracle provenance, and supporting evidence. Human review required.",
+    "persona": "external_auditor"
+  }
+}

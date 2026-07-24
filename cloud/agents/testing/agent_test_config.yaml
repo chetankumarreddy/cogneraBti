@@ -1,0 +1,11 @@
+agent_testing:
+  framework: pytest_plus_golden_cases
+  golden_cases: tests/fixtures/agent_golden_cases.json
+  report_output: tests/reports/agent_test_report.json
+  checks:
+    - required_terms
+    - no_speculation
+    - human_review_low_confidence
+    - evidence_reference
+  ci_command: ./cloud/agents/testing/run_agent_tests.sh
+  local_command: PYTHONPATH=backend pytest tests/agent -q

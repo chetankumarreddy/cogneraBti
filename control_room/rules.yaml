@@ -1,0 +1,19 @@
+rules:
+  UNKNOWN_WALLET: {description: Destination wallet could not be verified, severity: high, enabled: true, weight: 18}
+  BLACKLISTED_WALLET: {description: Wallet exists in blacklist, severity: critical, enabled: true, weight: 30}
+  OFF_HOURS: {description: Transaction executed during off-hours, severity: medium, enabled: true, weight: 12}
+  HIGH_VALUE: {description: Transaction exceeds threshold, severity: high, enabled: true, weight: 20, threshold: 50000000}
+  HIGH_DRIFT: {description: Behaviour significantly deviates from baseline, severity: high, enabled: true, weight: 18}
+  FRAUD_CLUSTER: {description: Wallet belongs to fraud cluster, severity: critical, enabled: true, weight: 30}
+  MULE_CLUSTER: {description: Wallet belongs to mule cluster, severity: high, enabled: true, weight: 24}
+  KYC_EXPIRED: {description: KYC validation expired, severity: high, enabled: true, weight: 18}
+  KYC_MISSING: {description: KYC information missing, severity: high, enabled: true, weight: 20}
+  SIGNATURE_INVALID: {description: Signature validation failed, severity: critical, enabled: true, weight: 35}
+  HASH_MISMATCH: {description: Hash validation failed, severity: critical, enabled: true, weight: 35}
+  VELOCITY_SPIKE: {description: Transaction frequency exceeds baseline, severity: medium, enabled: true, weight: 14}
+  FIRST_TIME_RECEIVER: {description: First interaction with receiver, severity: low, enabled: true, weight: 8}
+  RARE_DESTINATION: {description: Funds sent to unusual destination, severity: medium, enabled: true, weight: 12}
+  DORMANT_WALLET_ACTIVITY: {description: Previously inactive wallet became active, severity: medium, enabled: true, weight: 14}
+  LARGE_BALANCE_MOVEMENT: {description: Large percentage of wallet balance transferred, severity: high, enabled: true, weight: 22, percentage_threshold: 80}
+  MULTI_HOP_PATTERN: {description: Funds routed through multiple wallets, severity: high, enabled: true, weight: 18}
+  HIGH_RISK_COUNTRY: {description: Wallet associated with high-risk geography, severity: high, enabled: true, weight: 22}

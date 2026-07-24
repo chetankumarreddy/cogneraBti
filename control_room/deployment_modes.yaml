@@ -1,0 +1,13 @@
+deployment_modes:
+  local:
+    command: python run_all.py
+    components: [FastAPI, React, local_json, NetworkX, mock_gcul, mock_llm]
+  docker_compose:
+    command: docker compose up --build
+    components: [api_container, frontend_container]
+  cloud_run:
+    components: [Cloud Run API, static frontend hosting, Firestore, BigQuery, Secret Manager]
+  gke:
+    components: [api_service, graph_service, ml_service, narrative_service, evidence_service]
+  vm_local_only:
+    components: [FastAPI, React, Ollama, local files, optional Neo4j]
