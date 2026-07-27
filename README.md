@@ -171,3 +171,4 @@ Documentation:
 ```text
 docs/AGENT_TESTING_TOOLS.md
 ```
+By relying on a lightweight local RuleEngine and BigQueryMLInference model for initial triage, the system minimizes carbon-intensive LLM API calls, only invoking the generative GeminiNPL engine for high-risk anomalies or explicit investigations. The platform leverages GCP Secret Manager and Workload Identity for zero-trust security, ensuring no hardcoded credentials exist.
