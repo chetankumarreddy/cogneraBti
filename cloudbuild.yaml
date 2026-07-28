@@ -13,4 +13,3 @@ steps:
 images:
   - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-backend:$COMMIT_SHA'
   - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-frontend:$COMMIT_SHA'
-
