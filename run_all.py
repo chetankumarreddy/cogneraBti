@@ -63,7 +63,7 @@ def main():
 Cognira BTI running:
 API:      http://localhost:{args.api_port}/docs
 Frontend: http://localhost:{args.frontend_port}
-Demo:     TXN-000421
+Demo:    
 Press Ctrl+C to stop.
 """)
     while True:

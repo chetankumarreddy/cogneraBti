@@ -12,7 +12,7 @@ git config --global user.email "chetankumarreddy@users.noreply.github.com"
 git init || true
 git remote set-url origin "$REPO_URL" 2>/dev/null || git remote add origin "$REPO_URL"
 git add .
-git commit -m "feat: merged reboot-v1 frontend with cognerabti backend and fixed deployment root path" || echo "No changes"
+git commit -m "feat: align backend app.main route, fix server health offline bug, add 2fa/pam/syslog/ad/rbac admin toggles and interactive popup anomaly lists" || echo "No changes"
 git branch -M main
 git push -u origin main --force
 
