@@ -113,6 +113,11 @@ def get_config():
     with open("control_room/platform_config.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 @app.post("/rules/update")
 def update_rule(req: RuleUpdateModel):
     return {"status": "RULE_UPDATED_SUCCESSFULLY", "rule_id": req.rule_id, "threshold": req.threshold}
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+    import uvicorn
