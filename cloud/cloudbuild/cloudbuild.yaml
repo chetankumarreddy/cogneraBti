@@ -1,15 +1,15 @@
 steps:
   # 1. Build the Backend Container
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognira-backend:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-backend:$COMMIT_SHA', '.']
     dir: 'backend'
 
   # 2. Build the Frontend Container
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognira-frontend:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-frontend:$COMMIT_SHA', '.']
     dir: 'frontend'
 
 # Cloud Build automatically pushes all images listed below upon build completion
 images:
-  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognira-backend:$COMMIT_SHA'
-  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognira-frontend:$COMMIT_SHA'
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-backend:$COMMIT_SHA'
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-frontend:$COMMIT_SHA'
