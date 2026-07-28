@@ -2,7 +2,7 @@
   {
     "tx_id": "0xeth_demo_02_velocity",
     "verdict": "TRUE_POSITIVE",
-    "comments": "High velocity layering.",
+    "comments": "High velocity layering detected.",
     "user": "ADMIN_COGNIRA_01"
   }
 ]

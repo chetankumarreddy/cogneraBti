@@ -62,6 +62,7 @@ def analyze(req: RequestModel):
         "risk": {"composite": score, "level": level, "components": {"rule": score, "ml": 20.0}},
         "consensus": {"root_cause": "Unknown Entity Escalation" if is_unknown else "Routine Baseline"},
         "ai_services": {"document_ai": {"status": "EXTRACTED", "po_reference": "PO-GCP-2026-X"}},
+        "ml_insights": ["SUGGESTED RULE: Add threshold block for Velocity > 10 combined with off-hours."],
         "thread_status": {"ingest_thread": "OK", "rule_thread": "BREAK" if is_unknown else "OK", "ml_thread": "OK", "npl_thread": "OK"},
         "narrative": narrative,
         "raw": txn
@@ -100,3 +101,4 @@ def get_config():
 
 if __name__ == "__main__":
     import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))

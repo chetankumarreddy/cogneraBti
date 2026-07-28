@@ -5,7 +5,6 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(true);
   const [officerId, setOfficerId] = useState("ADMIN_COGNIRA_01");
-  const [isAdmin, setIsAdmin] = useState(true);
   const [activeTab, setActiveTab] = useState("DASHBOARD");
   const [searchTx, setSearchTx] = useState("0xeth_demo_02_velocity");
   const [persona, setPersona] = useState("Compliance Officer");
@@ -17,7 +16,6 @@ export default function App() {
   const [caseComment, setCaseComment] = useState("");
   const [caseStatus, setCaseStatus] = useState("INVESTIGATING");
   const [graphType, setGraphType] = useState("ENTITY_NETWORK");
-
 
   const apiBase = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
@@ -161,7 +159,6 @@ export default function App() {
                 <div className="col-span-2 space-y-6">
                     <div className="bg-[#1e293b] p-5 rounded-lg border border-slate-700 shadow-md">
                         <h2 className="text-[10px] font-bold uppercase font-mono text-indigo-400 mb-3"><Bot size={14} className="inline mr-1"/> Narrative Forge Output & Graph Matrix</h2>
-                        <h2 className="text-[10px] font-bold uppercase font-mono text-indigo-400 mb-3"><Bot size={14} className="inline mr-1"/> Narrative Forge Output</h2>
                         <div className="bg-[#0f172a] p-4 rounded border border-slate-600 text-[13px] text-slate-300 whitespace-pre-wrap font-sans min-h-[140px]">{analysis.narrative}</div>
                     </div>
                 </div>
@@ -199,8 +196,6 @@ export default function App() {
            <div className="bg-[#1e293b] p-6 rounded-lg border border-slate-700 shadow-md animate-fadeIn space-y-6">
               <h2 className="text-lg font-black text-emerald-400 uppercase font-mono"><Settings size={20} className="inline mr-2"/> Control Tower & ML Rule Tuning</h2>
               <p className="text-xs text-slate-400 font-mono">Platform is fully active with local mocks, custom persona prompts, and BigQuery ML suggestions.</p>
-              <h2 className="text-lg font-black text-emerald-400 uppercase font-mono"><Settings size={20} className="inline mr-2"/> Control Tower</h2>
-              <p className="text-xs text-slate-400 font-mono">Platform is fully active with local mocks and GCP Cloud Run endpoints linked.</p>
            </div>
         )}
       </div>
