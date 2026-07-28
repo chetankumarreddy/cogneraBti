@@ -1,0 +1,35 @@
+{
+    "system_mode": "FCA_COMPLIANCE_MODE_ACTIVE",
+    "version": "2026.9.0",
+    "weights": {
+        "rule_weight": 0.4,
+        "ml_weight": 0.35,
+        "history_weight": 0.25
+    },
+    "dynamic_personas": [
+        {
+            "id": "compliance_officer",
+            "name": "Compliance Officer",
+            "prompt": "Tone: Risk-Focused, UK Regulatory. Detail WHAT happened, WHY it matters, HOW detected, and RECOMMENDATION."
+        },
+        {
+            "id": "fca_examiner",
+            "name": "FCA Examiner",
+            "prompt": "Tone: Objective, UK FCA-style. Focus heavily on SYSC 6.1.1 framework execution."
+        }
+    ],
+    "integrations": {
+        "data_source": "LIVE_GCP",
+        "ledgers": [
+            "GCUL (Cloud Ledger)",
+            "Ethereum RPC"
+        ],
+        "npl_engines": [
+            "Gemini Enterprise Agent"
+        ],
+        "ml_engines": [
+            "BigQuery ML (Cloud)",
+            "Local Isolation Forest"
+        ]
+    }
+}

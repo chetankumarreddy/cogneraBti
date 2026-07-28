@@ -43,3 +43,10 @@ yarn-error.log*
 .vscode/
 .idea/
 *.swp
+.git/
+.vs/
+*.pyc
+dist/
+build/
+node_modules/
+evidence/
