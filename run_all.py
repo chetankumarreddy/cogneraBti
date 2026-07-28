@@ -52,7 +52,7 @@ def main():
         print("[Cognira BTI][ERROR] npm not found. Install Node.js or run with --backend-only.")
         sys.exit(1)
     if not args.skip_install and not args.backend_only:
-        run("install React frontend dependencies", ["npm.cmd", "install"], ROOT / "frontend")
+        run("install React frontend dependencies", ["npm.cmd", "install", "--force"], ROOT / "frontend")
 
     start("FastAPI backend", [py, "-m", "uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", args.api_port], ROOT / "backend")
     time.sleep(2)

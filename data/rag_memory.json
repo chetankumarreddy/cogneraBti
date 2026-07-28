@@ -1,0 +1,8 @@
+[
+  {
+    "tx_id": "0xeth_demo_02_velocity",
+    "verdict": "TRUE_POSITIVE",
+    "comments": "High velocity layering.",
+    "user": "ADMIN_COGNIRA_01"
+  }
+]
