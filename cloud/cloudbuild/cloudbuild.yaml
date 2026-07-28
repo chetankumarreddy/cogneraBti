@@ -1,16 +1,15 @@
-substitutions:
-  _REGION: europe-west2
-  _ARTIFACT_REPO: cognira-bti
-  _IMAGE_TAG: hackathon
 steps:
-  - name: python:3.12-slim
-    id: agent-tests
-    entrypoint: bash
-    args: ['-lc', 'pip install -r requirements.txt && PYTHONPATH=backend pytest tests/agent -q']
-  - name: gcr.io/cloud-builders/docker
-    args: ['build','-f','backend/Dockerfile','-t','${_REGION}-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/cognira-bti-api:${_IMAGE_TAG}','.']
-  - name: gcr.io/cloud-builders/docker
-    args: ['build','-f','frontend/Dockerfile','-t','${_REGION}-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/cognira-bti-web:${_IMAGE_TAG}','.']
+  # 1. Build the Backend Container
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-backend:$COMMIT_SHA', '.']
+    dir: 'backend'
+
+  # 2. Build the Frontend Container
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-frontend:$COMMIT_SHA', '.']
+    dir: 'frontend'
+
+# Cloud Build automatically pushes all images listed below upon build completion
 images:
-  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/cognira-bti-api:${_IMAGE_TAG}'
-  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/cognira-bti-web:${_IMAGE_TAG}'
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-backend:$COMMIT_SHA'
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/ltc-hack2026-team36/cognerabti-frontend:$COMMIT_SHA'
