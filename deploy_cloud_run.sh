@@ -7,12 +7,15 @@ GEMINI_KEY="AQ.Ab8RN6Iwq-kOM8ttsfggK95rcVJ0P2iQV5AKc8s36LvMgHDAkg"
 REPO_URL="https://github.com/chetankumarreddy/cogneraBti.git"
 
 echo "=== 1. Git Commit & Push (ignoring local machine venv/git/vs files) ==="
+echo "=== 1. Git Commit & Push (ignoring venv/git/vs files) ==="
 git config --global user.name "Chetan Kumar Reddy"
 git config --global user.email "chetankumarreddy@users.noreply.github.com"
 git init || true
 git remote set-url origin "$REPO_URL" 2>/dev/null || git remote add origin "$REPO_URL"
 git add .
 git commit -m "feat: realign reboot-v1 UI and cogneraBti backend with local fallbacks and correct root path deployment script" || echo "No changes"
+git commit -m "feat: realign reboot-v1 ui features with cognerabti backend and mock fallbacks" || echo "No changes"
+
 git branch -M main
 git push -u origin main --force
 
