@@ -21,7 +21,7 @@ gcloud config set project "$PROJECT_ID"
 gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com aiplatform.googleapis.com
 
 echo "=== 3. Deploying Backend API to Cloud Run ==="
-gcloud builds submit --tag "gcr.io/$PROJECT_ID/cognira-bti-api" backend/
+gcloud builds submit --tag "gcr.io/$PROJECT_ID/cognira-bti-api" backend/Dockerfile
 gcloud run deploy cognira-bti-api \
     --image "gcr.io/$PROJECT_ID/cognira-bti-api" \
     --platform managed --region "$REGION" --allow-unauthenticated \
@@ -31,7 +31,7 @@ BACKEND_URL=$(gcloud run services describe cognira-bti-api --platform managed --
 echo "Backend URL: $BACKEND_URL"
 
 echo "=== 4. Deploying Frontend Web App to Cloud Run ==="
-gcloud builds submit --tag "gcr.io/$PROJECT_ID/cognira-bti-web" frontend/
+gcloud builds submit --tag "gcr.io/$PROJECT_ID/cognira-bti-web" frontend/Dockerfile
 gcloud run deploy cognira-bti-web \
     --image "gcr.io/$PROJECT_ID/cognira-bti-web" \
     --platform managed --region "$REGION" --allow-unauthenticated \
